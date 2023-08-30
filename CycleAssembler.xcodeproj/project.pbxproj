@@ -9,21 +9,31 @@
 /* Begin PBXBuildFile section */
 		482354472A9F2F6E00342C1C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482354462A9F2F6E00342C1C /* AppDelegate.swift */; };
 		482354492A9F2F6E00342C1C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482354482A9F2F6E00342C1C /* SceneDelegate.swift */; };
-		4823544B2A9F2F6E00342C1C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4823544A2A9F2F6E00342C1C /* ViewController.swift */; };
+		4823544B2A9F2F6E00342C1C /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4823544A2A9F2F6E00342C1C /* StartViewController.swift */; };
 		4823544E2A9F2F6E00342C1C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4823544C2A9F2F6E00342C1C /* Main.storyboard */; };
 		482354502A9F2F7000342C1C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4823544F2A9F2F7000342C1C /* Assets.xcassets */; };
 		482354532A9F2F7000342C1C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 482354512A9F2F7000342C1C /* LaunchScreen.storyboard */; };
+		4823545B2A9F3F4200342C1C /* PartSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4823545A2A9F3F4200342C1C /* PartSelectionViewController.swift */; };
+		4823545E2A9F468500342C1C /* PartsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4823545C2A9F468500342C1C /* PartsCollectionViewCell.swift */; };
+		4823545F2A9F468500342C1C /* PartsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4823545D2A9F468500342C1C /* PartsCollectionViewCell.xib */; };
+		482354612A9F4A2200342C1C /* PartDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482354602A9F4A2200342C1C /* PartDataModel.swift */; };
+		482354672A9F7F6E00342C1C /* DragDropViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482354662A9F7F6E00342C1C /* DragDropViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		482354432A9F2F6E00342C1C /* CycleAssembler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CycleAssembler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		482354462A9F2F6E00342C1C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		482354482A9F2F6E00342C1C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		4823544A2A9F2F6E00342C1C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4823544A2A9F2F6E00342C1C /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		4823544D2A9F2F6E00342C1C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4823544F2A9F2F7000342C1C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		482354522A9F2F7000342C1C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		482354542A9F2F7000342C1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4823545A2A9F3F4200342C1C /* PartSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartSelectionViewController.swift; sourceTree = "<group>"; };
+		4823545C2A9F468500342C1C /* PartsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartsCollectionViewCell.swift; sourceTree = "<group>"; };
+		4823545D2A9F468500342C1C /* PartsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PartsCollectionViewCell.xib; sourceTree = "<group>"; };
+		482354602A9F4A2200342C1C /* PartDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartDataModel.swift; sourceTree = "<group>"; };
+		482354662A9F7F6E00342C1C /* DragDropViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragDropViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,8 +68,13 @@
 			children = (
 				482354462A9F2F6E00342C1C /* AppDelegate.swift */,
 				482354482A9F2F6E00342C1C /* SceneDelegate.swift */,
-				4823544A2A9F2F6E00342C1C /* ViewController.swift */,
+				482354602A9F4A2200342C1C /* PartDataModel.swift */,
+				4823544A2A9F2F6E00342C1C /* StartViewController.swift */,
+				4823545A2A9F3F4200342C1C /* PartSelectionViewController.swift */,
+				4823545C2A9F468500342C1C /* PartsCollectionViewCell.swift */,
+				482354662A9F7F6E00342C1C /* DragDropViewController.swift */,
 				4823544C2A9F2F6E00342C1C /* Main.storyboard */,
+				4823545D2A9F468500342C1C /* PartsCollectionViewCell.xib */,
 				4823544F2A9F2F7000342C1C /* Assets.xcassets */,
 				482354512A9F2F7000342C1C /* LaunchScreen.storyboard */,
 				482354542A9F2F7000342C1C /* Info.plist */,
@@ -126,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				482354532A9F2F7000342C1C /* LaunchScreen.storyboard in Resources */,
+				4823545F2A9F468500342C1C /* PartsCollectionViewCell.xib in Resources */,
 				482354502A9F2F7000342C1C /* Assets.xcassets in Resources */,
 				4823544E2A9F2F6E00342C1C /* Main.storyboard in Resources */,
 			);
@@ -138,9 +154,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4823544B2A9F2F6E00342C1C /* ViewController.swift in Sources */,
+				482354612A9F4A2200342C1C /* PartDataModel.swift in Sources */,
+				4823545B2A9F3F4200342C1C /* PartSelectionViewController.swift in Sources */,
+				482354672A9F7F6E00342C1C /* DragDropViewController.swift in Sources */,
+				4823544B2A9F2F6E00342C1C /* StartViewController.swift in Sources */,
 				482354472A9F2F6E00342C1C /* AppDelegate.swift in Sources */,
 				482354492A9F2F6E00342C1C /* SceneDelegate.swift in Sources */,
+				4823545E2A9F468500342C1C /* PartsCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,6 +310,7 @@
 				DEVELOPMENT_TEAM = 63N9M44LL4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CycleAssembler/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Cycle Assembler";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -318,6 +339,7 @@
 				DEVELOPMENT_TEAM = 63N9M44LL4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CycleAssembler/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Cycle Assembler";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

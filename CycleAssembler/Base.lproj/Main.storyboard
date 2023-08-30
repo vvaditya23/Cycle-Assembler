@@ -1,30 +1,169 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_12" orientation="landscape" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wc8-6G-quO">
+    <device id="retina4_7" orientation="landscape" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Start View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CycleAssembler" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="StartViewController" customModule="CycleAssembler" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="852" height="393"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="r0z-v4-m0v">
+                                <rect key="frame" x="12" y="32" width="635" height="198"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_cycle" translatesAutoresizingMaskIntoConstraints="NO" id="spE-s2-U3B">
+                                        <rect key="frame" x="0.0" y="0.0" width="307.5" height="198"/>
+                                    </imageView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Lq-F5-uOB">
+                                        <rect key="frame" x="327.5" y="0.0" width="307.5" height="198"/>
+                                        <string key="text">A bicycle is a human-powered vehicle with two wheels aligned in a frame. It is propelled by pedaling, where the rider's energy turns the pedals connected to a chain that drives the rear wheel. Bicycles are versatile, eco-friendly, and promote exercise while offering an efficient mode of transportation for short to moderate distances. They come in various styles suited for different purposes, from leisurely rides to commuting and competitive sports.</string>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Assemble your cycle as you wish it to be!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PTi-YE-Whg">
+                                <rect key="frame" x="122" y="260" width="423.5" height="27.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ETx-DH-793">
+                                <rect key="frame" x="283.5" y="315" width="100" height="50"/>
+                                <color key="backgroundColor" red="0.0" green="0.87450980392156863" blue="0.63529411764705879" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="mbB-Xd-5Bg"/>
+                                    <constraint firstAttribute="width" constant="100" id="zis-We-h8m"/>
+                                </constraints>
+                                <color key="tintColor" red="0.88235294819999999" green="0.97647058959999999" blue="0.98823529480000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Start">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="25"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="M6a-5E-qNn" kind="show" id="P76-vu-nQH"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="1" green="0.83137254901960778" blue="0.47450980392156861" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="PTi-YE-Whg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8nL-cp-RgH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ETx-DH-793" secondAttribute="bottom" constant="10" id="GVz-md-BZa"/>
+                            <constraint firstItem="r0z-v4-m0v" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="12" id="P3b-GY-DXq"/>
+                            <constraint firstItem="r0z-v4-m0v" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Ueu-DM-8P0"/>
+                            <constraint firstItem="PTi-YE-Whg" firstAttribute="top" secondItem="r0z-v4-m0v" secondAttribute="bottom" constant="30" id="XGJ-0W-MJ2"/>
+                            <constraint firstItem="ETx-DH-793" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="pYI-lH-6fb"/>
+                            <constraint firstAttribute="trailing" secondItem="r0z-v4-m0v" secondAttribute="trailing" constant="20" id="tc1-hJ-Pus"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="LO5-5C-HN0"/>
+                    <connections>
+                        <outlet property="startButton" destination="ETx-DH-793" id="VxI-Jz-azR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-92" y="4"/>
+            <point key="canvasLocation" x="658.45070422535218" y="3.8167938931297707"/>
+        </scene>
+        <!--Part Selection View Controller-->
+        <scene sceneID="yBk-5O-IiE">
+            <objects>
+                <viewController id="M6a-5E-qNn" customClass="PartSelectionViewController" customModule="CycleAssembler" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mob-wr-QO5">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xRO-OC-K05">
+                                <rect key="frame" x="0.0" y="32" width="667" height="343"/>
+                                <color key="backgroundColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="8vC-Ke-3L3">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="8Oh-nQ-pdu">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Mep-mk-tBd">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ZsA-kz-Ye2"/>
+                        <color key="backgroundColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ZsA-kz-Ye2" firstAttribute="trailing" secondItem="xRO-OC-K05" secondAttribute="trailing" id="HPB-gx-fqV"/>
+                            <constraint firstItem="ZsA-kz-Ye2" firstAttribute="bottom" secondItem="xRO-OC-K05" secondAttribute="bottom" id="P8s-FH-NrB"/>
+                            <constraint firstItem="xRO-OC-K05" firstAttribute="leading" secondItem="ZsA-kz-Ye2" secondAttribute="leading" id="nUH-JH-5Pr"/>
+                            <constraint firstItem="xRO-OC-K05" firstAttribute="top" secondItem="ZsA-kz-Ye2" secondAttribute="top" id="ueI-O7-cMg"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="RYR-xM-Hll"/>
+                    <connections>
+                        <outlet property="collectionView" destination="xRO-OC-K05" id="yrP-uv-Vfn"/>
+                        <segue destination="uRG-NA-K9m" kind="show" identifier="segueToDragDropScreen" id="a7G-2b-jgW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AP0-WJ-A0v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="658" y="951"/>
+        </scene>
+        <!--Drag Drop View Controller-->
+        <scene sceneID="bxy-nk-Fru">
+            <objects>
+                <viewController id="uRG-NA-K9m" customClass="DragDropViewController" customModule="CycleAssembler" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JHT-9r-pnT">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="XTd-T4-GIV"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="FAA-8y-loB"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aeG-Sh-2hM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="658" y="1826"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="8R9-c7-j4D">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wc8-6G-quO" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="AOo-5T-gVH">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="32"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="YwM-4c-bbd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IIM-Rb-vga" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-92.253521126760575" y="3.8167938931297707"/>
         </scene>
     </scenes>
     <resources>
+        <image name="img_cycle" width="219" height="126.5"/>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
