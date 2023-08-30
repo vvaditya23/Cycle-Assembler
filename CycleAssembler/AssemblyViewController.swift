@@ -51,7 +51,7 @@ class AssemblyViewController: UIViewController {
             // Set content size of the scroll view
             scrollView.contentSize = CGSize(width: scrollView.frame.width, height: CGFloat(selectedParts.count) * 100)
             //
-            //            // Enable drag interaction for each image view within the scroll view
+            // Enable drag interaction for each image view within the scroll view
             for imageView in scrollView.subviews.compactMap({ $0 as? UIImageView }) {
                 let dragInteraction = UIDragInteraction(delegate: self)
                 imageView.addInteraction(dragInteraction)
@@ -109,16 +109,31 @@ extension AssemblyViewController: UIDropInteractionDelegate {
                     DispatchQueue.main.async {
                         // Create a new UIImageView for the dropped image
                         let droppedImageView = UIImageView(image: image)
-                        
+                        droppedImageView.isUserInteractionEnabled = true
                         // Calculate the position in assemblyAreaView
                         let location = session.location(in: (self?.assemblyAreaView)!)
                         droppedImageView.center = location
                         
                         // Add the image view to the assembly area view
                         self?.assemblyAreaView.addSubview(droppedImageView)
+                        
+                        // After adding the image to the assemblyAreaView
+                        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(self!.handlePanGesture(_:)))
+                        droppedImageView.addGestureRecognizer(panGesture)
                     }
                 }
             }
         }
     }
+    @objc func handlePanGesture(_ gesture: UIPanGestureRecognizer) {
+        guard let draggedImageView = gesture.view as? UIImageView else {
+            return
+        }
+        
+        let translation = gesture.translation(in: assemblyAreaView)
+        draggedImageView.center.x += translation.x
+        draggedImageView.center.y += translation.y
+        gesture.setTranslation(.zero, in: assemblyAreaView)
+    }
+
 }
