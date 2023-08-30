@@ -124,21 +124,57 @@
             </objects>
             <point key="canvasLocation" x="658" y="951"/>
         </scene>
-        <!--Drag Drop View Controller-->
+        <!--Assembly View Controller-->
         <scene sceneID="bxy-nk-Fru">
             <objects>
-                <viewController id="uRG-NA-K9m" customClass="DragDropViewController" customModule="CycleAssembler" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="uRG-NA-K9m" customClass="AssemblyViewController" customModule="CycleAssembler" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JHT-9r-pnT">
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xhE-2y-Chh">
+                                <rect key="frame" x="0.0" y="32" width="250" height="343"/>
+                            </scrollView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SDv-vc-oDa">
+                                <rect key="frame" x="250" y="32" width="417" height="343"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QjQ-WR-rqx">
+                                        <rect key="frame" x="0.0" y="161" width="41.5" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="QjQ-WR-rqx" firstAttribute="leading" secondItem="SDv-vc-oDa" secondAttribute="leading" id="W7J-Ju-Ccs"/>
+                                    <constraint firstAttribute="bottom" secondItem="QjQ-WR-rqx" secondAttribute="bottom" constant="161" id="a70-Xq-nw3"/>
+                                    <constraint firstItem="QjQ-WR-rqx" firstAttribute="top" secondItem="SDv-vc-oDa" secondAttribute="top" constant="161" id="u1c-ua-adR"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="XTd-T4-GIV"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="SDv-vc-oDa" firstAttribute="bottom" secondItem="XTd-T4-GIV" secondAttribute="bottom" id="2yb-i0-zP2"/>
+                            <constraint firstItem="SDv-vc-oDa" firstAttribute="top" secondItem="XTd-T4-GIV" secondAttribute="top" id="MvC-Lz-6xE"/>
+                            <constraint firstItem="xhE-2y-Chh" firstAttribute="bottom" secondItem="XTd-T4-GIV" secondAttribute="bottom" id="N9p-g8-N6S"/>
+                            <constraint firstItem="xhE-2y-Chh" firstAttribute="leading" secondItem="XTd-T4-GIV" secondAttribute="leading" id="XSh-1E-R1s"/>
+                            <constraint firstItem="SDv-vc-oDa" firstAttribute="trailing" secondItem="XTd-T4-GIV" secondAttribute="trailing" id="i40-4k-0ZE"/>
+                            <constraint firstItem="SDv-vc-oDa" firstAttribute="leading" secondItem="JHT-9r-pnT" secondAttribute="leading" constant="250" id="noY-Ms-5mx"/>
+                            <constraint firstItem="xhE-2y-Chh" firstAttribute="top" secondItem="XTd-T4-GIV" secondAttribute="top" id="oIp-wO-ckR"/>
+                            <constraint firstItem="SDv-vc-oDa" firstAttribute="leading" secondItem="xhE-2y-Chh" secondAttribute="trailing" id="uaU-27-6TC"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="FAA-8y-loB"/>
+                    <connections>
+                        <outlet property="assemblyAreaView" destination="SDv-vc-oDa" id="RNT-9Q-Iff"/>
+                        <outlet property="scrollView" destination="xhE-2y-Chh" id="h3C-Fg-abD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aeG-Sh-2hM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="658" y="1826"/>
+            <point key="canvasLocation" x="657.12143928035982" y="1824.8"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="8R9-c7-j4D">

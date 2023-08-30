@@ -54,7 +54,7 @@ class PartSelectionViewController: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "segueToDragDropScreen" {
-            if let dragDropViewController = segue.destination as? DragDropViewController {
+            if let dragDropViewController = segue.destination as? AssemblyViewController {
                 dragDropViewController.selectedParts = selectedParts
             }
         }
