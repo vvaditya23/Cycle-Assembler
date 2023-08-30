@@ -2,12 +2,12 @@
 //  ViewController.swift
 //  CycleAssembler
 //
-//  Created by ヴィヤヴャハレ・アディティア on 30/08/23.
+//  Created by Aditya Vyavahare(ヴィヤヴャハレ・アディティア) on 30/08/23.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
+class StartViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
