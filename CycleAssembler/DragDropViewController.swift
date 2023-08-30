@@ -9,9 +9,11 @@ import UIKit
 
 class DragDropViewController: UIViewController {
 
+    var selectedParts: [PartDataModel] = [] // To receive selected parts
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+//        print(selectedParts)
         // Do any additional setup after loading the view.
     }
     

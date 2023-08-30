@@ -45,13 +45,20 @@ class PartSelectionViewController: UIViewController {
         // Add "Next" button to the navigation bar
             let nextButton = UIBarButtonItem(title: "Next＞", style: .plain, target: self, action: #selector(nextButtonTapped))
             navigationItem.rightBarButtonItem = nextButton
+        nextButton.isEnabled = false
     }
     
     @objc func nextButtonTapped() {
         performSegue(withIdentifier: "segueToDragDropScreen", sender: nil)
     }
 
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "segueToDragDropScreen" {
+            if let dragDropViewController = segue.destination as? DragDropViewController {
+                dragDropViewController.selectedParts = selectedParts
+            }
+        }
+    }
     /*
      // MARK: - Navigation
      
@@ -73,19 +80,38 @@ extension PartSelectionViewController: UICollectionViewDelegate, UICollectionVie
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PartCell", for: indexPath) as! PartsCollectionViewCell
             let part = parts[indexPath.item]
             cell.configure(with: part)
+        
+        // Set checkbox state based on whether part is selected
+            cell.isChecked = selectedParts.contains(part)
+            cell.checkboxButton.setImage(cell.isChecked ? UIImage(named: "ic_checked") : UIImage(named: "ic_unchecked"), for: .normal)
+        
+
             return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-            let selectedPart = parts[indexPath.item]
-            
-        if !selectedParts.contains(where: { $0 == selectedPart }) {
-                selectedParts.append(selectedPart)
-            print(selectedPart)
+        let selectedPart = parts[indexPath.item]
+        
+        if selectedParts.contains(selectedPart) {
+            if let indexToRemove = selectedParts.firstIndex(of: selectedPart) {
+                selectedParts.remove(at: indexToRemove)
             }
-            
-            // Update UI or do anything else needed for part selection
+        } else {
+            selectedParts.append(selectedPart)
         }
+        
+        // Ensure minimum 3 parts are selected and maximum all parts are selected
+        if selectedParts.count >= 3 && selectedParts.count <= parts.count {
+            // Update UI or enable the "Next" button
+            navigationItem.rightBarButtonItem?.isEnabled = true
+        } else {
+            // Update UI or disable the "Next" button
+            navigationItem.rightBarButtonItem?.isEnabled = false
+        }
+        
+        collectionView.reloadItems(at: [indexPath])
+    }
+
 }
 
 extension PartSelectionViewController: UICollectionViewDelegateFlowLayout {
