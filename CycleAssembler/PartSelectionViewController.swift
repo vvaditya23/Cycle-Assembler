@@ -93,24 +93,23 @@ extension PartSelectionViewController: UICollectionViewDelegate, UICollectionVie
         let selectedPart = parts[indexPath.item]
         
         if selectedParts.contains(selectedPart) {
-            if let indexToRemove = selectedParts.firstIndex(of: selectedPart) {
-                selectedParts.remove(at: indexToRemove)
-            }
+            selectedParts.removeAll { $0 == selectedPart }
         } else {
             selectedParts.append(selectedPart)
         }
         
-        // Ensure minimum 3 parts are selected and maximum all parts are selected
+        print("Selected Items: \(selectedParts)")
+        
+        // Update UI or enable/disable the "Next" button based on selection count
         if selectedParts.count >= 3 && selectedParts.count <= parts.count {
-            // Update UI or enable the "Next" button
-            navigationItem.rightBarButtonItem?.isEnabled = true
+            navigationItem.rightBarButtonItem?.isEnabled = true // Enable the button
         } else {
-            // Update UI or disable the "Next" button
-            navigationItem.rightBarButtonItem?.isEnabled = false
+            navigationItem.rightBarButtonItem?.isEnabled = false // Disable the button
         }
         
         collectionView.reloadItems(at: [indexPath])
     }
+
 
 }
 

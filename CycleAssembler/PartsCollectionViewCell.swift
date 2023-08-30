@@ -18,6 +18,11 @@ class PartsCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        checkboxButton.setImage(UIImage(named: "ic_unchecked"), for: .normal)
+        
+        // Customize cell selection style
+                selectedBackgroundView = UIView()
+                selectedBackgroundView?.backgroundColor = UIColor.systemBlue.withAlphaComponent(0.2) // Customize the highlight color
     }
     
     func configure(with part: PartDataModel) {
