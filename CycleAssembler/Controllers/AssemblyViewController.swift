@@ -2,7 +2,7 @@
 //  DragDropViewController.swift
 //  CycleAssembler
 //
-//  Created by ヴィヤヴャハレ・アディティア on 30/08/23.
+//  Created by Aditya Vyavahare(ヴィヤヴャハレ・アディティア) on 30/08/23.
 //
 
 import UIKit
@@ -10,12 +10,12 @@ import MobileCoreServices
 
 class AssemblyViewController: UIViewController {
     
-
+    
     @IBOutlet weak var scrollView: UIScrollView!
-        @IBOutlet weak var assemblyAreaView: UIView!
+    @IBOutlet weak var assemblyAreaView: UIView!
     @IBOutlet weak var dragDropInstructionLabel: UILabel!
     
-    var selectedParts: [PartDataModel] = [] // To receive selected parts
+    var selectedParts: [PartsDataModel] = [] // To receive selected parts
     var assembledPartImageViews: [UIImageView] = [] //store the parts added to the assembly area
     
     override func viewWillAppear(_ animated: Bool) {
@@ -30,24 +30,24 @@ class AssemblyViewController: UIViewController {
         assemblyAreaView.layer.cornerRadius = 10
         
         // Add "Next" button to the navigation bar
-            let nextButton = UIBarButtonItem(title: "Next＞", style: .plain, target: self, action: #selector(nextButtonTapped))
-            navigationItem.rightBarButtonItem = nextButton
+        let nextButton = UIBarButtonItem(title: "Next＞", style: .plain, target: self, action: #selector(nextButtonTapped))
+        navigationItem.rightBarButtonItem = nextButton
         
         assemblyAreaView.isUserInteractionEnabled = true
         
         // Enable drop interaction for assembly area view
-            let dropInteraction = UIDropInteraction(delegate: self)
-            assemblyAreaView.addInteraction(dropInteraction)
+        let dropInteraction = UIDropInteraction(delegate: self)
+        assemblyAreaView.addInteraction(dropInteraction)
         
         // Implement UIDropInteractionDelegate methods
-           func dropInteraction(_ interaction: UIDropInteraction, canHandle session: UIDropSession) -> Bool {
-               // Check if the session has a drag item that contains images
-               return session.hasItemsConforming(toTypeIdentifiers: [kUTTypeImage as String])
-           }
+        func dropInteraction(_ interaction: UIDropInteraction, canHandle session: UIDropSession) -> Bool {
+            // Check if the session has a drag item that contains images
+            return session.hasItemsConforming(toTypeIdentifiers: [kUTTypeImage as String])
+        }
         // Disable horizontal scrolling
-                scrollView.isDirectionalLockEnabled = true
+        scrollView.isDirectionalLockEnabled = true
         
-//        print("Received data: \(selectedParts)")
+        //        print("Received data: \(selectedParts)")
         for part in selectedParts {
             let imageView = UIImageView(image: part.image)
             imageView.contentMode = .scaleAspectFit
@@ -79,17 +79,6 @@ class AssemblyViewController: UIViewController {
         colorVC.assembledPartImageViews = assembledPartImageViews // Pass the data
         navigationController?.pushViewController(colorVC, animated: true)
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 extension AssemblyViewController: UIDragInteractionDelegate {
@@ -108,19 +97,17 @@ extension AssemblyViewController: UIDragInteractionDelegate {
 }
 
 extension AssemblyViewController: UIDropInteractionDelegate {
-
-    // ... Previous code
     
     // Implement UIDropInteractionDelegate methods
     func dropInteraction(_ interaction: UIDropInteraction, canHandle session: UIDropSession) -> Bool {
         // Check if the session has a drag item that contains images
         return session.hasItemsConforming(toTypeIdentifiers: [kUTTypeImage as String])
     }
-
+    
     func dropInteraction(_ interaction: UIDropInteraction, sessionDidUpdate session: UIDropSession) -> UIDropProposal {
         return UIDropProposal(operation: .copy)
     }
-
+    
     func dropInteraction(_ interaction: UIDropInteraction, performDrop session: UIDropSession) {
         // Handle the drop here
         if let item = session.items.first, item.itemProvider.canLoadObject(ofClass: UIImage.self) {
@@ -137,37 +124,10 @@ extension AssemblyViewController: UIDropInteractionDelegate {
                         // Add the image view to the assembly area view
                         self?.assemblyAreaView.addSubview(droppedImageView)
                         droppedImageView.tintColor = .black
-                        
-                        // After adding the image to the assemblyAreaView
-//                        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(self!.handlePanGesture(_:)))
-//                        droppedImageView.addGestureRecognizer(panGesture)
-                        
-                        // Add the image view to the assembledPartImageViews array
-                                            self?.assembledPartImageViews.append(droppedImageView)
+                        self?.assembledPartImageViews.append(droppedImageView)
                     }
                 }
             }
         }
     }
-//    @objc func handlePanGesture(_ gesture: UIPanGestureRecognizer) {
-//        guard let draggedImageView = gesture.view as? UIImageView else {
-//            return
-//        }
-//
-//        let translation = gesture.translation(in: assemblyAreaView)
-//        let newX = draggedImageView.center.x + translation.x
-//        let newY = draggedImageView.center.y + translation.y
-//
-//        // Calculate the bounding rectangle
-//        let minX = draggedImageView.bounds.width / 2
-//        let maxX = assemblyAreaView.bounds.width - draggedImageView.bounds.width / 2
-//        let minY = draggedImageView.bounds.height / 2
-//        let maxY = assemblyAreaView.bounds.height - draggedImageView.bounds.height / 2
-//
-//        // Restrict the new position within the bounds
-//        draggedImageView.center.x = min(max(newX, minX), maxX)
-//        draggedImageView.center.y = min(max(newY, minY), maxY)
-//
-//        gesture.setTranslation(.zero, in: assemblyAreaView)
-//    }
 }

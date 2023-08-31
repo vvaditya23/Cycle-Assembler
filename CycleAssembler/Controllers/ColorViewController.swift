@@ -8,11 +8,11 @@
 import UIKit
 
 class ColorViewController: UIViewController {
-
+    
     var assembledPartImageViews: [UIImageView] = [] //to receive parts in the assembly area
     var finalPartImageViews: [UIImageView] = [] // Assembled image views with colors
     // Store the reference to the tapped image view
-        var tappedImageView: UIImageView?
+    var tappedImageView: UIImageView?
     
     override func viewWillAppear(_ animated: Bool) {
         // Display the assembled part image views
@@ -27,12 +27,12 @@ class ColorViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.title = "Change color of parts"
         
         // Add "Next" button to the navigation bar
-            let nextButton = UIBarButtonItem(title: "Next＞", style: .plain, target: self, action: #selector(nextButtonTapped))
-            navigationItem.rightBarButtonItem = nextButton
+        let nextButton = UIBarButtonItem(title: "Next＞", style: .plain, target: self, action: #selector(nextButtonTapped))
+        navigationItem.rightBarButtonItem = nextButton
         
         // Display the assembled part image views
         for imageView in assembledPartImageViews {
@@ -42,7 +42,7 @@ class ColorViewController: UIViewController {
             imageView.isUserInteractionEnabled = true
             addTapGestureToImageView(imageView)
         }
-
+        
         // ... Add color selection UI elements here
     }
     
@@ -55,33 +55,26 @@ class ColorViewController: UIViewController {
 
 extension ColorViewController: UIColorPickerViewControllerDelegate {
     func addTapGestureToImageView(_ imageView: UIImageView) {
-            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleColorPickerTap(_:)))
-            imageView.isUserInteractionEnabled = true
-            imageView.addGestureRecognizer(tapGesture)
-        }
-
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleColorPickerTap(_:)))
+        imageView.isUserInteractionEnabled = true
+        imageView.addGestureRecognizer(tapGesture)
+    }
+    
     // Present the color picker when an image view is tapped
-        @objc func handleColorPickerTap(_ gesture: UITapGestureRecognizer) {
-            if let imageView = gesture.view as? UIImageView {
-                tappedImageView = imageView
-
-                let colorPicker = UIColorPickerViewController()
-                colorPicker.delegate = self
-                colorPicker.selectedColor = imageView.tintColor
-
-                present(colorPicker, animated: true, completion: nil)
-                
-                // Add the image view to the finalPartImageViews array
-                        finalPartImageViews.append(imageView)
-            }
+    @objc func handleColorPickerTap(_ gesture: UITapGestureRecognizer) {
+        if let imageView = gesture.view as? UIImageView {
+            tappedImageView = imageView
+            
+            let colorPicker = UIColorPickerViewController()
+            colorPicker.delegate = self
+            colorPicker.selectedColor = imageView.tintColor
+            
+            present(colorPicker, animated: true, completion: nil)
+            
+            // Add the image view to the finalPartImageViews array
+            finalPartImageViews.append(imageView)
         }
-
-//        // Delegate method to handle color picker color changes
-//        func colorPickerViewControllerDidSelectColor(_ viewController: UIColorPickerViewController) {
-//            if let imageView = tappedImageView {
-//                imageView.tintColor = viewController.selectedColor
-//            }
-//        }
+    }
     
     func colorPickerViewControllerDidSelectColor(_ viewController: UIColorPickerViewController) {
         if let imageView = tappedImageView {
@@ -101,5 +94,4 @@ extension ColorViewController: UIColorPickerViewControllerDelegate {
             }
         }
     }
-
 }
