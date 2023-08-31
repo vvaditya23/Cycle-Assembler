@@ -18,6 +18,7 @@ class PartsCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        ProductDescription.isUserInteractionEnabled = false
         checkboxButton.setImage(UIImage(named: "ic_unchecked"), for: .normal)
         partImageView.tintColor = .black
         // Customize cell selection style
@@ -35,4 +36,11 @@ class PartsCollectionViewCell: UICollectionViewCell {
             isChecked = !isChecked
             checkboxButton.setImage(isChecked ? UIImage(named: "ic_checked") : UIImage(named: "ic_unchecked"), for: .normal)
         }
+    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+        if let result = ProductDescription.hitTest(convert(point, to: ProductDescription), with: event) {
+            return result
+        }
+        return super.hitTest(point, with: event)
+    }
+
 }
