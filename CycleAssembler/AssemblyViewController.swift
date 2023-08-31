@@ -16,6 +16,11 @@ class AssemblyViewController: UIViewController {
     @IBOutlet weak var dragDropInstructionLabel: UILabel!
     
     var selectedParts: [PartDataModel] = [] // To receive selected parts
+    var assembledPartImageViews: [UIImageView] = [] //store the parts added to the assembly area
+    
+    override func viewWillAppear(_ animated: Bool) {
+        assembledPartImageViews.removeAll()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,8 +74,11 @@ class AssemblyViewController: UIViewController {
     }
     
     @objc func nextButtonTapped() {
-        performSegue(withIdentifier: "segueToColorViewController", sender: nil)
+        let colorVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ColorViewController") as! ColorViewController
+        colorVC.assembledPartImageViews = assembledPartImageViews // Pass the data
+        navigationController?.pushViewController(colorVC, animated: true)
     }
+
     /*
     // MARK: - Navigation
 
@@ -131,6 +139,9 @@ extension AssemblyViewController: UIDropInteractionDelegate {
                         // After adding the image to the assemblyAreaView
                         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(self!.handlePanGesture(_:)))
                         droppedImageView.addGestureRecognizer(panGesture)
+                        
+                        // Add the image view to the assembledPartImageViews array
+                                            self?.assembledPartImageViews.append(droppedImageView)
                     }
                 }
             }

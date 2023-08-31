@@ -9,19 +9,16 @@ import UIKit
 
 class ColorViewController: UIViewController {
 
+    var assembledPartImageViews: [UIImageView] = [] //to receive parts in the assembly area
+
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        // Display the assembled part image views
+        for imageView in assembledPartImageViews {
+            view.addSubview(imageView)
+        }
+
+        // ... Add color selection UI elements here
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
