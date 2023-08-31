@@ -1,6 +1,8 @@
 # Cycle-Assembler
 This is a landscape app where-in you can select parts for your cycle and assemble the cycle as per your requirement (we accept partially assembled cycles😆)
 
+[![Watch the video](https://github.com/vvaditya23/Cycle-Assembler/assets/70578987/5ed910b7-6cd5-417f-aed4-a0b6490aae90)
+
 Here is the demonstration video clip👇
 https://github.com/vvaditya23/Cycle-Assembler/assets/70578987/5ed910b7-6cd5-417f-aed4-a0b6490aae90
 
