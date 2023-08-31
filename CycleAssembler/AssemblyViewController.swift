@@ -13,11 +13,20 @@ class AssemblyViewController: UIViewController {
 
     @IBOutlet weak var scrollView: UIScrollView!
         @IBOutlet weak var assemblyAreaView: UIView!
+    @IBOutlet weak var dragDropInstructionLabel: UILabel!
     
     var selectedParts: [PartDataModel] = [] // To receive selected parts
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.title = "Assemble"
+        
+        assemblyAreaView.layer.cornerRadius = 10
+        
+        // Add "Next" button to the navigation bar
+            let nextButton = UIBarButtonItem(title: "Next＞", style: .plain, target: self, action: #selector(nextButtonTapped))
+            navigationItem.rightBarButtonItem = nextButton
         
         assemblyAreaView.isUserInteractionEnabled = true
         
@@ -59,7 +68,9 @@ class AssemblyViewController: UIViewController {
         }
     }
     
-
+    @objc func nextButtonTapped() {
+        performSegue(withIdentifier: "segueToColorViewController", sender: nil)
+    }
     /*
     // MARK: - Navigation
 
@@ -131,9 +142,19 @@ extension AssemblyViewController: UIDropInteractionDelegate {
         }
         
         let translation = gesture.translation(in: assemblyAreaView)
-        draggedImageView.center.x += translation.x
-        draggedImageView.center.y += translation.y
+        let newX = draggedImageView.center.x + translation.x
+        let newY = draggedImageView.center.y + translation.y
+        
+        // Calculate the bounding rectangle
+        let minX = draggedImageView.bounds.width / 2
+        let maxX = assemblyAreaView.bounds.width - draggedImageView.bounds.width / 2
+        let minY = draggedImageView.bounds.height / 2
+        let maxY = assemblyAreaView.bounds.height - draggedImageView.bounds.height / 2
+        
+        // Restrict the new position within the bounds
+        draggedImageView.center.x = min(max(newX, minX), maxX)
+        draggedImageView.center.y = min(max(newY, minY), maxY)
+        
         gesture.setTranslation(.zero, in: assemblyAreaView)
     }
-
 }

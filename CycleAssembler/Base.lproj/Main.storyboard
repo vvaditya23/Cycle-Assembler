@@ -138,23 +138,22 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SDv-vc-oDa">
                                 <rect key="frame" x="250" y="32" width="417" height="343"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QjQ-WR-rqx">
-                                        <rect key="frame" x="0.0" y="161" width="41.5" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Drag the parts from side menu and drop it here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KLg-op-uXN">
+                                        <rect key="frame" x="30" y="161" width="357" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" systemColor="placeholderTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" systemColor="secondaryLabelColor"/>
                                 <constraints>
-                                    <constraint firstItem="QjQ-WR-rqx" firstAttribute="leading" secondItem="SDv-vc-oDa" secondAttribute="leading" id="W7J-Ju-Ccs"/>
-                                    <constraint firstAttribute="bottom" secondItem="QjQ-WR-rqx" secondAttribute="bottom" constant="161" id="a70-Xq-nw3"/>
-                                    <constraint firstItem="QjQ-WR-rqx" firstAttribute="top" secondItem="SDv-vc-oDa" secondAttribute="top" constant="161" id="u1c-ua-adR"/>
+                                    <constraint firstItem="KLg-op-uXN" firstAttribute="centerY" secondItem="SDv-vc-oDa" secondAttribute="centerY" id="1ly-LF-gRX"/>
+                                    <constraint firstItem="KLg-op-uXN" firstAttribute="centerX" secondItem="SDv-vc-oDa" secondAttribute="centerX" id="2lo-TY-vsS"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="XTd-T4-GIV"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="SDv-vc-oDa" firstAttribute="bottom" secondItem="XTd-T4-GIV" secondAttribute="bottom" id="2yb-i0-zP2"/>
                             <constraint firstItem="SDv-vc-oDa" firstAttribute="top" secondItem="XTd-T4-GIV" secondAttribute="top" id="MvC-Lz-6xE"/>
@@ -169,12 +168,30 @@
                     <navigationItem key="navigationItem" id="FAA-8y-loB"/>
                     <connections>
                         <outlet property="assemblyAreaView" destination="SDv-vc-oDa" id="RNT-9Q-Iff"/>
+                        <outlet property="dragDropInstructionLabel" destination="KLg-op-uXN" id="LXa-C6-qd7"/>
                         <outlet property="scrollView" destination="xhE-2y-Chh" id="h3C-Fg-abD"/>
+                        <segue destination="TIx-9a-dQX" kind="show" identifier="segueToColorViewController" id="Pqh-Ip-ajH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aeG-Sh-2hM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="657.12143928035982" y="1824.8"/>
+        </scene>
+        <!--Color View Controller-->
+        <scene sceneID="LVg-gv-hVL">
+            <objects>
+                <viewController id="TIx-9a-dQX" customClass="ColorViewController" customModule="CycleAssembler" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LDl-81-YHn">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="7GS-GA-kZi"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="SXe-UF-t3v"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6iw-bd-kb3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="657" y="2694"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="8R9-c7-j4D">
@@ -199,6 +216,12 @@
         <image name="img_cycle" width="219" height="126.5"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="placeholderTextColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29803921568627451" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
