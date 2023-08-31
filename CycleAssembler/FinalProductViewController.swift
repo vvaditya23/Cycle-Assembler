@@ -17,7 +17,7 @@ class FinalProductViewController: UIViewController {
         self.title = "Your final product"
         
         // Add "Close" button to the right side of the navigation bar
-            let closeButton = UIBarButtonItem(title: "Close", style: .plain, target: self, action: #selector(closeButtonTapped))
+            let closeButton = UIBarButtonItem(title: "Close App", style: .plain, target: self, action: #selector(closeButtonTapped))
             navigationItem.rightBarButtonItem = closeButton
         
         // Display the final assembled part image views
