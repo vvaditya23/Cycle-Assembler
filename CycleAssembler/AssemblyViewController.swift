@@ -137,8 +137,8 @@ extension AssemblyViewController: UIDropInteractionDelegate {
                         self?.assemblyAreaView.addSubview(droppedImageView)
                         
                         // After adding the image to the assemblyAreaView
-                        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(self!.handlePanGesture(_:)))
-                        droppedImageView.addGestureRecognizer(panGesture)
+//                        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(self!.handlePanGesture(_:)))
+//                        droppedImageView.addGestureRecognizer(panGesture)
                         
                         // Add the image view to the assembledPartImageViews array
                                             self?.assembledPartImageViews.append(droppedImageView)
@@ -147,25 +147,25 @@ extension AssemblyViewController: UIDropInteractionDelegate {
             }
         }
     }
-    @objc func handlePanGesture(_ gesture: UIPanGestureRecognizer) {
-        guard let draggedImageView = gesture.view as? UIImageView else {
-            return
-        }
-        
-        let translation = gesture.translation(in: assemblyAreaView)
-        let newX = draggedImageView.center.x + translation.x
-        let newY = draggedImageView.center.y + translation.y
-        
-        // Calculate the bounding rectangle
-        let minX = draggedImageView.bounds.width / 2
-        let maxX = assemblyAreaView.bounds.width - draggedImageView.bounds.width / 2
-        let minY = draggedImageView.bounds.height / 2
-        let maxY = assemblyAreaView.bounds.height - draggedImageView.bounds.height / 2
-        
-        // Restrict the new position within the bounds
-        draggedImageView.center.x = min(max(newX, minX), maxX)
-        draggedImageView.center.y = min(max(newY, minY), maxY)
-        
-        gesture.setTranslation(.zero, in: assemblyAreaView)
-    }
+//    @objc func handlePanGesture(_ gesture: UIPanGestureRecognizer) {
+//        guard let draggedImageView = gesture.view as? UIImageView else {
+//            return
+//        }
+//        
+//        let translation = gesture.translation(in: assemblyAreaView)
+//        let newX = draggedImageView.center.x + translation.x
+//        let newY = draggedImageView.center.y + translation.y
+//        
+//        // Calculate the bounding rectangle
+//        let minX = draggedImageView.bounds.width / 2
+//        let maxX = assemblyAreaView.bounds.width - draggedImageView.bounds.width / 2
+//        let minY = draggedImageView.bounds.height / 2
+//        let maxY = assemblyAreaView.bounds.height - draggedImageView.bounds.height / 2
+//        
+//        // Restrict the new position within the bounds
+//        draggedImageView.center.x = min(max(newX, minX), maxX)
+//        draggedImageView.center.y = min(max(newY, minY), maxY)
+//        
+//        gesture.setTranslation(.zero, in: assemblyAreaView)
+//    }
 }
