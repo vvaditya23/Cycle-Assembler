@@ -19,6 +19,7 @@
 		482354612A9F4A2200342C1C /* PartDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482354602A9F4A2200342C1C /* PartDataModel.swift */; };
 		482354672A9F7F6E00342C1C /* AssemblyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482354662A9F7F6E00342C1C /* AssemblyViewController.swift */; };
 		482354692AA02ECE00342C1C /* ColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482354682AA02ECE00342C1C /* ColorViewController.swift */; };
+		4823546B2AA04AF000342C1C /* FinalProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4823546A2AA04AF000342C1C /* FinalProductViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		482354602A9F4A2200342C1C /* PartDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartDataModel.swift; sourceTree = "<group>"; };
 		482354662A9F7F6E00342C1C /* AssemblyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssemblyViewController.swift; sourceTree = "<group>"; };
 		482354682AA02ECE00342C1C /* ColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorViewController.swift; sourceTree = "<group>"; };
+		4823546A2AA04AF000342C1C /* FinalProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalProductViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 				4823545C2A9F468500342C1C /* PartsCollectionViewCell.swift */,
 				482354662A9F7F6E00342C1C /* AssemblyViewController.swift */,
 				482354682AA02ECE00342C1C /* ColorViewController.swift */,
+				4823546A2AA04AF000342C1C /* FinalProductViewController.swift */,
 				4823544C2A9F2F6E00342C1C /* Main.storyboard */,
 				4823545D2A9F468500342C1C /* PartsCollectionViewCell.xib */,
 				4823544F2A9F2F7000342C1C /* Assets.xcassets */,
@@ -157,6 +160,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4823546B2AA04AF000342C1C /* FinalProductViewController.swift in Sources */,
 				482354612A9F4A2200342C1C /* PartDataModel.swift in Sources */,
 				4823545B2A9F3F4200342C1C /* PartSelectionViewController.swift in Sources */,
 				482354692AA02ECE00342C1C /* ColorViewController.swift in Sources */,

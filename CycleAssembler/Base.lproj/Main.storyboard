@@ -179,13 +179,32 @@ place it carefully)</string>
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="7GS-GA-kZi"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="SXe-UF-t3v"/>
+                    <connections>
+                        <segue destination="b03-n9-1ct" kind="show" identifier="segueToFinalProductView" id="95t-89-nw0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6iw-bd-kb3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="657" y="2694"/>
+        </scene>
+        <!--Final Product View Controller-->
+        <scene sceneID="Ots-wR-3Up">
+            <objects>
+                <viewController storyboardIdentifier="FinalProductViewController" id="b03-n9-1ct" customClass="FinalProductViewController" customModule="CycleAssembler" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Bmu-MC-5ZX">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="xuV-4t-slu"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="iib-QP-DAd"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4K6-9Q-OPG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="656" y="3556"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="8R9-c7-j4D">
